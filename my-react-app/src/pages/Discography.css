@@ -1,0 +1,190 @@
+.discography-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.discography-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-controls label {
+    color: #333;
+    font-weight: 500;
+}
+
+.filter-controls select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-controls select:hover {
+    border-color: #999;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.album-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+}
+
+.album-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.album-info {
+    padding: 15px;
+}
+
+.album-info h3 {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.album-info p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.album-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.modal-info {
+    padding: 30px;
+    flex: 1;
+}
+
+.modal-info h2 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.album-type {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0 0 5px;
+}
+
+.release-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+}
+
+.tracklist {
+    margin-top: 20px;
+}
+
+.tracklist h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.tracklist ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tracklist li {
+    color: #666;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .modal-info {
+        padding: 20px;
+    }
+} 

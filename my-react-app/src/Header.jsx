@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import exoLogo from './assets/exo-logo.png'
+
 function Header(){
 
     return(
@@ -7,12 +9,12 @@ function Header(){
             <nav className="nav">
                 <ul className="nav-list">
                     <li><img src={exoLogo} alt="EXO logo" /></li>
-                    <li>Home</li>
-                    <li>Members</li>
-                    <li>Discography</li>
-                    <li>Gallery</li>
-                    <li>News</li>
-                    <li>Contact</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/members">Members</Link></li>
+                    <li><Link to="/discography">Discography</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                    <li><Link to="/news">News</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </nav>
         </header>
