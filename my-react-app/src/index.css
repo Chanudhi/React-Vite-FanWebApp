@@ -1,39 +1,174 @@
-.card{
-  border: 1px solid hsl(0, 0%, 80%);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #8B80FF;
+  --secondary-color: #FF7B7B;
+  --background-color: #1A1A1A;
+  --text-color: #FFFFFF;
+  --text-light: #B3B3B3;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  --gradient-bg: linear-gradient(135deg, #8B80FF 0%, #FF7B7B 100%);
+  --card-bg: #2A2A2A;
+  --input-bg: #333333;
+  --input-text: #FFFFFF;
+  --input-border: #4A4A4A;
+  --success-color: #4CAF50;
+  --header-bg: #2A2A2A;
+  --footer-bg: #2A2A2A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.header {
+  background: var(--header-bg);
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-list img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--gradient-bg);
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+.main-content {
+  min-height: calc(100vh - 120px);
+  padding: 2rem 0;
+}
+
+.footer {
+  background: var(--footer-bg);
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-list img {
+    height: 30px;
+  }
+}
+
+.card {
+  border: 1px solid var(--input-border);
   border-radius: 10px;
-  box-shadow:5px 5px 5px hsl(0, 0%, 0%, 0.1);
+  box-shadow: var(--card-shadow);
   padding: 20px;
   margin: 10px;
   text-align: center;
   max-width: 250px;
-  display:inline-block
+  display: inline-block;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
-.card img{
+
+.card img {
   height: 60%;
   width: 100%;
   border-radius: 10px;
 }
-.card h2{
-  color: hsl(0, 0%, 20%);
+
+.card h2 {
+  color: var(--text-color);
 }
-.card p{
-  color: hsl(0, 0%, 40%);
+
+.card p {
+  color: var(--text-light);
 }
-.position{
+
+.position {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.footer{
 
-  text-align: center;
-  padding: 20px;
-  background-color: hsl(0, 2%, 59%);
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -2px 5px hsl(0, 0%, 0%, 0.1);
-}
 header {
   background-color: #989797;
   color: #7a7777;
@@ -53,7 +188,6 @@ header {
   animation-fill-mode: forwards;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
 }
 
 header h1 {
